@@ -1,0 +1,100 @@
+/*TOOLBAR AND SEED BOX */
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+button { /*all the buttons*/
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 14px;
+    background-color: rgb(104, 164, 114);
+    color: #f2faf8;
+    border: 2px outset #92b792; /*outset 3D look*/
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(120, 180, 130);
+}
+
+.toolbar button.active { /*the tool active*/
+    background-color: #11531b;
+    border-style: inset; /*outset but reverse*/
+}
+
+.seed-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.seed-form input {
+    width: 110px;
+    font-size: 16px;
+    padding: 4px 6px;
+}
+
+/*PLAYING THE GAME. 
+#NOTE .game, .counter and .note from style.css */
+
+.game-bar {
+    display: grid; /*3 columns for mines, face, empty (was timer)*/
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.game-bar .counter {
+    justify-self: start;
+    min-width: 50px;
+    text-align: center;
+}
+
+.face-button { /*the button is only a frame, the face sprite is its background*/
+    width: var(--tile, 48px); /*--tile by js syncs the sprite size*/
+    height: var(--tile, 48px);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    image-rendering: pixelated; /*keeps pixel art sharp when bigger*/
+}
+
+.face-button:hover {
+    background-color: transparent;
+}
+
+.minefield {
+    width: fit-content;
+    border: 3px inset #546851;
+    user-select: none; /*no text selection*/
+}
+
+.tile-row { /*row of tiles*/
+    display: flex;
+}
+
+.tile { /*sprite is set by the js as background*/
+    width: var(--tile, 48px);
+    height: var(--tile, 48px);
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+
+.tile:hover {
+    filter: brightness(1.15); /*lights when you hover*/
+}
+
+.note p[data-status="WON"] { /*js puts the status here*/
+    color: #0b3d12;
+}
+
+.note p[data-status="GAMEOVER"] {
+    color: #7a1208;
+}

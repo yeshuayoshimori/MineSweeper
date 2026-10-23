@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> <!--English-->
+<title>Minesweeper | Play</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/game.css"> 
+<script type="module" src="scripts/main.js"></script> <!--module where the js files can import each other-->
+</head>
+<body>
+<aside class="sidebar">
+    <p class="categories">Menu</p>
+    <nav>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="play.html" class="current">Play</a></p>
+        <p><a href="rules.html">Rules</a></p>
+    </nav>
+</aside>
+
+<div class="content">
+    <header>
+        <h1><img src="assets/logomine.webp" alt="Minesweeper logo">Play</h1>
+    </header>
+
+    <main>
+        <p>
+            This is where you can play the game.
+        </p>
+
+        <!--buttons choose wht left click does like selection tools, right click is always the flag-->
+        <nav class="toolbar" data-toolbar> <!--toolbar theres the data-tool whcich tells js which tool the button is-->
+            <button type="button" data-tool="reveal">Reveal</button>
+            <button type="button" data-tool="flag">Flag</button>
+        </nav>
+
+        <!--same seed is the same board, so you can play that boad again, like minecraft-->
+        <form class="seed-form" data-seed-form>
+            <label>Seed <input type="number" min="0" step="1" data-seed></label>
+            <button type="submit">Play seed</button>
+            <button type="button" data-random>Random board</button>
+        </form>
+
+        <div data-status-panel> <!--the js looks for the counter, face and message inside this box-->
+            <div class="game">
+                <div class="game-bar"> <!--mines left, face-->
+                    <span class="counter" data-mines-left></span> <!--mines left-->
+                    <button type="button" class="face-button" data-face aria-label="New random board"></button> <!--lil face-->
+                    <span></span> <!--nothing, it keeps the face in the middle-->
+                </div>
+
+                <div class="minefield" data-board></div> <!--in js builds the rows and tiles here-->
+            </div>
+
+            <div class="note"><!--js changes this to win or GameOver-->
+                <p data-message></p>
+            </div>
+        </div>
+
+        <div class="note">
+            <p>
+                Left click uses the chosen tool, right click always flags. The seed number decides where the mines
+                are, and they are placed before your first click, so the first click can be a mine.
+                Need help? Read the <a href="rules.html">rules</a>.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>sprites by FungiCaptain</p>
+    </footer>
+</div>
+
+</body>
+</html>

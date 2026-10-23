@@ -1,0 +1,14 @@
+# mac and windows folder junk
+.DS_Store
+Thumbs.db
+
+# editor settings
+.vscode/
+.idea/
+
+# logs and packages
+*.log
+node_modules/
+
+# zips of the project
+*.zip

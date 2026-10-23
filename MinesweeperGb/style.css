@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    display: flex;/*for sidebar and the content properly side by side */
+    flex-wrap: wrap;/*sidebar on top */
+    min-height: 100vh;
+    color: #f2faf8;
+    font-family: sans-serif;
+}
+
+/*SIDEBAR THINGS */
+
+.sidebar { /*Side Bar "Menu"*/
+    background-color: #416e4b;
+    color: white;
+    padding: 30px;
+    flex: 0 0 180px; /* grow, shrink, basis*/
+}
+
+.categories {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    font-family:sans-serif;
+}
+
+.sidebar p {
+    margin: 10px 0;
+}
+
+.sidebar nav {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.sidebar a { /*change words in sidebar*/
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover { /* when hovering t mouse over it */
+    color: #a2f232;
+    text-decoration: underline;
+}
+
+.sidebar a.current { /*highlights the category of the page in whihc u you are */
+    color: #03d13d;
+    font-weight: bold;
+}
+
+/*Not the sidebar, the elements in the right*/
+
+.content {  /*check for d header, main N footer in a column*/
+    flex: 1 1 100px; /*good spread*/
+    background-image: url("kirbybgGB.png");
+    padding: 20px;
+    display: flex; 
+    flex-direction: column;
+    background-size: cover; /*puts it visible and not fragmented*/
+    background-position: center;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 40px;
+    margin: 0 0 10px; /*maybe not that neccessary now*/
+}
+
+header img {
+    width: 44px;
+    vertical-align: middle; /*lines logo with the title text*/
+    margin-right: 10px;
+}
+
+main {
+    max-width: 700px;
+}
+
+main h2 {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+main p, main li {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+main a { /*highlight directories*/
+    color: #15c8c8;
+}
+
+
+/*Pictures N notes*/
+
+figure { /*sample board*/
+    margin: 0 0 20px;
+}
+
+figure img { /*Sample img*/
+    max-width: 100%; /*so not wider than the box*/
+    border: 3px solid #222;
+}
+
+figcaption {
+    font-size: 14px;
+    font-style: italic; /*more proper for citing?*/
+    margin-top: 6px;
+}
+
+.note {     /* for notes, rectangular bg filled sections*/
+    background-color: rgb(104, 164, 114);
+    border-left: 6px solid #11531b;
+    border-radius: 4px;
+    padding: 4px 16px;
+    margin: 20px 0;
+}
+
+details {   /*open close parts*/
+    background-color: rgb(120, 162, 94);
+    border: 1px solid #61a145;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Playing the game section */
+
+.game {
+    display: inline-block; /*It stays square, otherwise it expands to the sides */
+    background-color: #7b9671;
+    border: 5px outset #92b792;/* outset for giving more 3D texture to the game border */
+    padding: 10px;
+}
+
+.game-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.counter {
+    background-color: rgb(6, 51, 11);
+    color: rgb(86, 155, 83);
+    font-size: 24px;
+    font-weight: bold;
+    padding: 2px 8px;
+}
+
+.face {
+    width: 38px;
+    height: auto;
+    
+}
+
+.board {
+    display: grid;    /* put the game grid properly */
+    grid-template-columns: repeat(9, 36px);
+    grid-auto-rows: 36px;
+    width: fit-content;
+    border: 3px inset #546851;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #566f5a;
+    border: 3px outset #364e0c;   /*rising tiles, giving them texture 3D like*/
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cell.open {
+    border: 1px solid #3e5b38;  /*revealed tile that turns flat*/
+    background-color: #588666;
+}
+
+.cell img {  /*flag*/
+    width: 20px;
+}
